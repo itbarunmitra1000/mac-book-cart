@@ -1,4 +1,4 @@
-//   memory cost  function
+//   cost  function
 
 function getChangeFeature(featureName, featureNewPrice) {
     const changeFeature = document.getElementById(featureName + '-cost');
@@ -6,23 +6,25 @@ function getChangeFeature(featureName, featureNewPrice) {
     calculateTotal(featureNewPrice);
     getInputValue(featureName)
 }
-
+//  get value 
 function getInputValue(featureName){
     const changeFeatureName = document.getElementById(featureName + '-cost');
-    const featureCost = parseInt(changeFeatureName.innerText);
+    const featureCost = parseFloat(changeFeatureName.innerText);
     return featureCost;
 }
 
 function calculateTotal(){
     const bestPrice = document.getElementById('best-price');
-    const updateBestPrice = parseInt(bestPrice.innerText);
+    const updateBestPrice = parseFloat(bestPrice.innerText);
+    // get price 
     const memoryCost = getInputValue('memory') ;
     const storageCost = getInputValue('storage') ;
     const deliveryCost = getInputValue('delivery') ;
     const totalPrice = document.getElementById('total-price');
+    // total price count 
     const updateTotalPrice = updateBestPrice + memoryCost + storageCost + deliveryCost;  
     totalPrice.innerText = updateTotalPrice ;
-
+    // pomo code apply 
     const footerTotalPrice = document.getElementById('footer-total-price');
     footerTotalPrice.innerText = updateTotalPrice;
     const pomoCode = document.getElementById('pomo-code');
@@ -30,9 +32,9 @@ function calculateTotal(){
     const pomoApply = document.getElementById('pomo-apply');
     pomoApply.addEventListener('click',function(){
         if(pomoCodeValue == 'stevekaku'){
-            const pomoApplyPrice = updateTotalPrice /20 ;
-            console.log(pomoApplyPrice);
-            // footerTotalPrice.innerText = pomoApplyPrice;
+            const pomoApplyPrice = updateTotalPrice / 20  ;
+            const updatePomoPrice = updateTotalPrice - pomoApplyPrice;
+            footerTotalPrice.innerText = updatePomoPrice ;
         }
     });
 
