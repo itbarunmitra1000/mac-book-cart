@@ -11,7 +11,7 @@
 </head>
 
 <body>
-
+        <!-- mac cart main  part -->
     <main class="w-2/3 mx-auto mt-4">
         <section class="grid grid-cols-2 ">
             <img class="w-4/6 ml-28" src="./images/mac.png" alt="">
@@ -26,25 +26,25 @@
                 </div>
                 <div class="pb-2">
                     <h3 class="font-bold ">Memory</h3>
-                    <button class="border p-2 text-xs hover:bg-gray-800 hover:text-white rounded">8GB unified memory
+                    <button id="memory-8gb" class="border p-2 text-xs hover:bg-gray-800 hover:text-white rounded">8GB unified memory
                     </button>
-                    <button class="border p-2 text-xs hover:bg-gray-800 hover:text-white rounded">16GB unified memory
+                    <button id="memory-16gb" class="border p-2 text-xs hover:bg-gray-800 hover:text-white rounded">16GB unified memory
                     </button>
                 </div>
                 <div class="pb-2">
                     <h3 class="font-bold ">Storage</h3>
-                    <button class="border p-2 text-xs hover:bg-gray-800 hover:text-white rounded">256GB SSD storage
+                    <button id="storage-button-256gb" class="border p-2 text-xs hover:bg-gray-800 hover:text-white rounded">256GB SSD storage
                     </button>
-                    <button class="border p-2 text-xs hover:bg-gray-800 hover:text-white rounded">8GB unified memory
+                    <button id="storage-button-512gb" class="border p-2 text-xs hover:bg-gray-800 hover:text-white rounded">512GB SSD storage
                     </button>
-                    <button class="border p-2 text-xs hover:bg-gray-800 hover:text-white rounded">1TB SSD
+                    <button  id="storage-button-1tb" class="border p-2 text-xs hover:bg-gray-800 hover:text-white rounded">1TB SSD
                         storage</button>
                 </div>
                 <div class="pb-2 ">
                     <h3 class="font-bold ">Choose your delivery option</h3>
-                    <button class="border p-2 text-xs hover:bg-gray-800 hover:text-white rounded">Friday, Aug 25 FREE
+                    <button id="delivery-free" class="border p-2 text-xs hover:bg-gray-800 hover:text-white rounded">Friday, Aug 25 FREE
                         Prime Delivery</button>
-                    <button class="border p-2 text-xs hover:bg-gray-800 hover:text-white rounded">Friday, Aug 21
+                    <button id="delivery-charge" class="border p-2 text-xs hover:bg-gray-800 hover:text-white rounded">Friday, Aug 21
                         Delivery charge $20 </button>
 
                 </div>
@@ -56,17 +56,17 @@
                     <hr>
                     <div class="flex justify-between my-2">
                         <h2 class="text-xs font-bold">Extra Memory Cost</h2>
-                        <h2 class="text-xs font-bold">$<span>0</span></h2>
+                        <h2  class="text-xs font-bold">$<span id="memory-cost">0</span></h2>
                     </div>
                     <hr>
                     <div class="flex justify-between my-2">
                         <h2 class="text-xs font-bold">Extra Storage Cost</h2>
-                        <h2 class="text-xs font-bold">$<span>0</span></h2>
+                        <h2 class="text-xs font-bold">$<span id="storage-cost">0</span></h2>
                     </div>
                     <hr>
                     <div class="flex justify-between my-2 border-b-2  border-gray-800 pb-2">
                         <h2 class="text-xs font-bold">Delivery charge</h2>
-                        <h2 class="text-xs font-bold ">$<span>0</span></h2>
+                        <h2 class="text-xs font-bold ">$<span id="delivery-cost">0</span></h2>
                     </div>
                     <!-- <hr style="color:red;"> -->
                     <div class="flex justify-between my-2 ">
@@ -79,7 +79,7 @@
                 <form action="" class="my-2">
                     <h3 class="text-xs mb-2 ">Add Pomo code</h3>
                     <input class="border rounded pb-2" type="text">
-                    <button class="bg-red-600 p-2 text-xs text-white rounded ">Apply</button>
+                    <button class="bg-red-600 p-2 text-xs text-white rounded hover:bg-red-700">Apply</button>
                 </form>
             </div>
 
@@ -89,6 +89,9 @@
         </section>
 
     </main>
+
+    <!-- js src link  -->
+    <script src="./mac-js/mac-pro.js"></script>
 
 </body>
 
