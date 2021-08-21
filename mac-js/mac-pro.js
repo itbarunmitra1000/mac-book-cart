@@ -13,15 +13,28 @@ function getInputValue(featureName){
     return featureCost;
 }
 
-function calculateTotal(featureNewPrice){
+function calculateTotal(){
     const bestPrice = document.getElementById('best-price');
     const updateBestPrice = parseInt(bestPrice.innerText);
     const memoryCost = getInputValue('memory') ;
     const storageCost = getInputValue('storage') ;
     const deliveryCost = getInputValue('delivery') ;
     const totalPrice = document.getElementById('total-price');
-    totalPrice.innerText = updateBestPrice + memoryCost + storageCost + deliveryCost;
-   
+    const updateTotalPrice = updateBestPrice + memoryCost + storageCost + deliveryCost;  
+    totalPrice.innerText = updateTotalPrice ;
+
+    const footerTotalPrice = document.getElementById('footer-total-price');
+    footerTotalPrice.innerText = updateTotalPrice;
+    const pomoCode = document.getElementById('pomo-code');
+    const pomoCodeValue = pomoCode.value ;
+    const pomoApply = document.getElementById('pomo-apply');
+    pomoApply.addEventListener('click',function(){
+        if(pomoCodeValue == 'stevekaku'){
+            const pomoApplyPrice = updateTotalPrice /20 ;
+            console.log(pomoApplyPrice);
+            // footerTotalPrice.innerText = pomoApplyPrice;
+        }
+    });
 
 }
 
@@ -58,44 +71,4 @@ document.getElementById('delivery-free').addEventListener('click', function () {
 });
 document.getElementById('delivery-charge').addEventListener('click', function () {
     getChangeFeature('delivery', '20');
-
-
 });
-
-/* function getMemoryCost(memoryNewPrice) {
-    const memoryCost = document.getElementById('memory-cost');
-    memoryCost.innerText = memoryNewPrice;
-    const updateMemory = parseFloat(memoryCost.innerText);
-    // console.log(updateMemory);
-    return updateMemory;
-}
-
-// storage cost fuction
-
-function getStorageCost(storageNewPrice) {
-    const storageCost = document.getElementById('storage-cost');
-    storageCost.innerText = storageNewPrice;
-    const updateStorage = parseFloat(storageCost.innerText);
-    return updateStorage;
-}
-
-// delivery part function
-function getdeliveryCost(deliveryNewCost) {
-    const deliveryCost = document.getElementById('delivery-cost');
-    deliveryCost.innerText = deliveryNewCost;
-    const updateDeliveryCost = parseFloat(deliveryCost.innerText);
-    return updateDeliveryCost;
-
-}
-
-// Total Price function
-function getTotalPrice(newP) {
-    const bestPrice = document.getElementById('best-price').innerText;
-    const newPrice = parseFloat(bestPrice) + newP;
-    return newPrice;
-
-
-
-
-} */
-
