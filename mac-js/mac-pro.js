@@ -1,10 +1,10 @@
 //   memory cost  function
 
-function getChangeFeature(newFeature, featureNewPrice) {
-    const changeFeature = document.getElementById(newFeature + '-cost');
+function getChangeFeature(featureName, featureNewPrice) {
+    const changeFeature = document.getElementById(featureName + '-cost');
     changeFeature.innerText = featureNewPrice ;
     calculateTotal(featureNewPrice);
-    getInputValue(newFeature)
+    getInputValue(featureName)
 }
 
 function getInputValue(featureName){
@@ -16,12 +16,11 @@ function getInputValue(featureName){
 function calculateTotal(featureNewPrice){
     const bestPrice = document.getElementById('best-price');
     const updateBestPrice = parseInt(bestPrice.innerText);
-    const memoryCost = getInputValue('memory') + parseInt(featureNewPrice) ;
-    console.log(memoryCost);
-    // const storageCost = getInputValue('storage') + parseInt(featureNewPrice) ;
-    // const deliveryCost = getInputValue('delivery') + parseInt(featureNewPrice) ;
+    const memoryCost = getInputValue('memory') ;
+    const storageCost = getInputValue('storage') ;
+    const deliveryCost = getInputValue('delivery') ;
     const totalPrice = document.getElementById('total-price');
-    totalPrice.innerText = updateBestPrice + memoryCost ;
+    totalPrice.innerText = updateBestPrice + memoryCost + storageCost + deliveryCost;
    
 
 }
@@ -39,26 +38,26 @@ document.getElementById('memory-16gb').addEventListener('click', function () {
 
 // storage cost button 
 document.getElementById('storage-button-256gb').addEventListener('click', function () {
-    getChangeFeature('storage-cost', '0');
+    getChangeFeature('storage', '0');
 
 });
 
 document.getElementById('storage-button-512gb').addEventListener('click', function () {
-    getChangeFeature('storage-cost', '100');
+    getChangeFeature('storage', '100');
 
 });
 
 document.getElementById('storage-button-1tb').addEventListener('click', function () {
-    getChangeFeature('storage-cost', '180');
+    getChangeFeature('storage', '180');
 });
 
 // delivery part button 
 document.getElementById('delivery-free').addEventListener('click', function () {
-    getChangeFeature('delivery-cost', '0');
+    getChangeFeature('delivery', '0');
 
 });
 document.getElementById('delivery-charge').addEventListener('click', function () {
-    getChangeFeature('delivery-cost', '20');
+    getChangeFeature('delivery', '20');
 
 
 });
